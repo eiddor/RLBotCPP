@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(RLBotCPP LANGUAGES CXX)
+project(RLBotCPPV4 LANGUAGES CXX)
 
 set(source_files
   ${PROJECT_SOURCE_DIR}/src/bot.cc
@@ -41,11 +41,11 @@ set(header_files
   ${PROJECT_SOURCE_DIR}/inc/rlbot/statesetting.h
 )
 
-add_library(RLBotCPP STATIC ${source_files} ${header_files})
-target_include_directories(RLBotCPP PUBLIC inc lib/inc)
-target_compile_features(RLBotCPP PUBLIC cxx_std_17)
+add_library(RLBotCPPV4 STATIC ${source_files} ${header_files})
+target_include_directories(RLBotCPPV4 PUBLIC inc lib/inc)
+target_compile_features(RLBotCPPV4 PUBLIC cxx_std_17)
 
 #link linux libraries
 if (UNIX)
-    target_link_libraries(RLBotCPP ${CMAKE_DL_LIBS})
+    target_link_libraries(RLBotCPPV4 ${CMAKE_DL_LIBS})
 endif (UNIX)
